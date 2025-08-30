@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuackBoox - Coming Soon</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Using the Inter font for a clean, modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* CSS animation for the progress bar's glowing effect */
+        @keyframes pulse-glow {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        .progress-bar-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 75%; /* Remains at a static 75% */
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
+    <div class="max-w-xl mx-auto text-center p-8 md:p-12 bg-gray-800 rounded-2xl shadow-xl border-t-8 border-yellow-400">
+        <!-- Logo/Icon placeholder. Could be replaced with an image later. -->
+        <div class="text-4xl sm:text-5xl mb-4">
+            <span role="img" aria-label="A cheerful duck emoji">🦆</span>
+        </div>
+        
+        <!-- Main header with QuackBoox branding -->
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-400 mb-4 tracking-tight">
+            QuackBoox
+        </h1>
+        
+        <!-- Main message for the user -->
+        <p class="text-lg md:text-xl text-gray-200 mb-6">
+            We're busy getting our ducks in a row and building something amazing for you!
+        </p>
+
+        <!-- Call to action/secondary message -->
+        <p class="text-md md:text-lg text-gray-400 mb-6">
+            This site is currently under construction. Please visit our Etsy shop directly at the link below to get started!
+        </p>
+
+        <!-- Progress bar or visual indicator -->
+        <div class="w-full bg-gray-700 rounded-full h-2.5 mb-6 overflow-hidden progress-bar-container">
+            <div class="bg-yellow-500 h-2.5 rounded-full progress-bar"></div>
+        </div>
+
+        <!-- Etsy shop link -->
+        <div class="flex items-center justify-center space-x-4 text-gray-400">
+            <a href="YOUR_ETSY_SHOP_URL_HERE" class="hover:text-blue-400 transition-colors duration-300">
+                <span class="sr-only">Etsy Shop</span>
+                <!-- Corrected Etsy SVG icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-etsy"><path d="M11.96 17.152c-.521.282-1.025.448-1.508.5-.484.053-.945-.047-1.385-.302-.44-.255-.788-.636-1.044-1.144-.256-.508-.328-1.127-.215-1.855.113-.728.36-1.554.743-2.477.382-.923.89-1.947 1.523-3.072.633-1.124 1.34-2.282 2.122-3.475.783-1.192 1.58-2.316 2.392-3.37.813-1.054 1.564-2.028 2.253-2.923.689-.895 1.258-1.685 1.706-2.37.447-.685.762-1.266.942-1.745.18-.479.24-.852.18-.04-.06.812-.224 1.57-.492 2.27-.268.7-.6 1.32-.994 1.86-.395.54-.853.985-1.373 1.334-.52.348-1.107.595-1.76.74-.652.146-1.368.182-2.148.11-.78-.07-1.616-.25-2.508-.54-.892-.29-1.832-.676-2.82-1.155-.987-.478-2.016-.995-3.085-1.547-1.07-.552-2.14-1.026-3.21-1.423-1.07-.397-2.096-.69-3.076-.878-.98-.188-1.897-.27-2.753-.243-.855.026-1.638.196-2.348.512-.71.315-1.34.782-1.89 1.399-.55.618-.996 1.378-1.336 2.282-.34.904-.56 1.945-.66 3.123-.1 1.178-.06 2.474.12 3.889.18 1.415.526 2.946.993 4.59.467 1.644 1.077 3.424 1.83 5.34.752 1.916 1.666 4.004 2.744 6.262 1.078 2.257 2.283 4.567 3.615 6.93.364.63.784 1.19 1.258 1.68.473.49 1.033.883 1.68.175.647.292 1.34-.372 2.08-.215.74-.216 1.458-.51 2.152-.88.694-1.255 1.32-1.684 1.872-2.14.553-2.88 1.134-3.513 1.742-.634.608-.956 1.17-.966 1.685-.01.515.02.97.09 1.368.07.398.15.733.24 1.005.09.272.18.478.27.618.09.14.17.207.24.207.07 0 .15-.045.24-.135.09-.09.19-.21.3-.36.11-.15.23-.33.36-.54.13-.21.26-.45.39-.72.13-.27.24-.57.34-.9.1-.33.19-.68.27-1.05.08-.37.15-.76.21-1.17.06-.41.11-.84.15-1.29.04-.45.06-.92.06-1.41l-.004-.002c.004-.268.046-.575.123-.92.078-.346.182-.73.313-1.15.13-.42.29-.872.48-1.356.19-.484.41-.994.67-1.53.26-.536.56-1.11.9-1.72.34-.61.73-1.25 1.17-1.92.44-.67.92-1.37 1.45-2.09.53-.72 1.11-1.47 1.74-2.25.63-.78 1.3-1.58 2-2.4.7-.82 1.45-1.66 2.25-2.52.8-.86 1.65-1.74 2.54-2.64.89-.9 1.82-1.82 2.79-2.77.97-.95 1.95-1.84 2.96-2.66 1.01-.82 2.02-1.53 3.03-2.13 1.01-.6 1.98-.98 2.92-1.15.94-.17 1.83-.02 2.67.44.84.46 1.62 1.25 2.34 2.37.72 1.12 1.37 2.57 1.96 4.35.59 1.78 1.11 3.89 1.55 6.33.44 2.44.81 5.21 1.09 8.3.28 3.09.43 6.49.43 10.2.002.583-.075 1.162-.232 1.737-.156.575-.386 1.135-.688 1.681-.302.547-.678 1.077-1.13 1.59-.452.513-.984.992-1.595 1.437-.611.445-1.298.84-2.06 1.184-.76.344-1.6.634-2.52.87-.92.237-1.92.42-3.003.55-.96.11-1.874.128-2.74-.007z" stroke="currentColor" fill="none"></path></svg>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
