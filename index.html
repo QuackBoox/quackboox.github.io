@@ -17,9 +17,19 @@
         @keyframes pulse-glow {
             0% {
                 transform: translateX(-100%);
+                opacity: 0;
+            }
+            10% {
+                transform: translateX(-70%);
+                opacity: 0.3;
+            }
+            80% {
+                transform: translateX(170%);
+                opacity: 0.3;
             }
             100% {
-                transform: translateX(100%);
+                transform: translateX(200%);
+                opacity: 0;
             }
         }
         
@@ -39,10 +49,10 @@
             top: 0;
             left: 0;
             bottom: 0;
-            width: 50%;
-            background: rgba(255, 255, 255, 0.2);
+            width: 50%; /* Wider to create a more prominent glow */
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 9999px;
-            animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            animation: pulse-glow 2s linear infinite; /* Increased duration and linear timing for a smoother pulse */
         }
     </style>
 </head>
